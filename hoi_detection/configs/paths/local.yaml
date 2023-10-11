@@ -1,0 +1,5 @@
+root: '/mnt/4t'
+data_dir: ${.root}/${data.dataset}
+ckpt_in_dir: ${.root}/experiments/${exp_name}/ckpt
+ckpt_out_dir: ${.root}/experiments/${exp_name}/ckpt
+log_dir: ${.root}/experiments/${exp_name}/log

@@ -1,0 +1,18 @@
+# @package _global_
+
+exp_group: im1k
+exp_name: clip-linear-sign
+
+model:
+  backbone: ImageNet1k-ViT-B
+  classifier: clip-linear
+  log_scale: 0.0
+  log_scale_trainable: False
+
+loss:
+  name: Sign
+
+wandb: True
+epochs: 10
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}

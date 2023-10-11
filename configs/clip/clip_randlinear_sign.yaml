@@ -1,0 +1,19 @@
+# @package _global_
+
+exp_group: clip
+exp_name: rand-linear-sign
+
+optim:
+  base_lr: 1.5e-5
+
+model:
+  classifier: rand-linear
+  log_scale_trainable: False
+
+loss:
+  name: Sign
+
+wandb: True
+epochs: 20
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}

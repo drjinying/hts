@@ -1,0 +1,19 @@
+# @package _global_
+
+exp_group: clip
+exp_name: rand-linear-bce
+
+optim:
+  base_lr: 1.5e-5
+
+model:
+  classifier: rand-linear
+  log_scale_trainable: False
+
+loss:
+  name: BCE
+
+wandb: True
+epochs: 40
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}

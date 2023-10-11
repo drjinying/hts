@@ -1,0 +1,16 @@
+# @package _global_
+
+exp_group: im1k
+exp_name: clip-sign
+
+model:
+  backbone: ImageNet1k-ViT-B
+  classifier: clip
+
+loss:
+  name: Sign
+
+wandb: True
+epochs: 10
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}

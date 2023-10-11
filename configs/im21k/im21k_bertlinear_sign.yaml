@@ -1,0 +1,18 @@
+# @package _global_
+
+exp_group: im21k
+exp_name: bert-linear-sign
+
+model:
+  backbone: ImageNet21k-ViT-B
+  classifier: bert-linear
+  log_scale: 0.0
+  log_scale_trainable: False
+
+loss:
+  name: Sign
+
+wandb: True
+epochs: 10
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}

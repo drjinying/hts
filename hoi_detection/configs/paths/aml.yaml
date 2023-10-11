@@ -1,0 +1,5 @@
+root: '/eccv'
+data_dir: ${.root}/data/${data.dataset}
+ckpt_in_dir: ${.root}/defr-patch16/${exp_group}/${exp_name}/ckpt
+ckpt_out_dir: ${.root}/defr-patch16/${exp_group}/${exp_name}/ckpt
+log_dir: ${.root}/defr-patch16/${exp_group}/${exp_name}/log

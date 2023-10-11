@@ -1,0 +1,21 @@
+# @package _global_
+
+exp_group: clip
+exp_name: clip-sign-vitb-p16
+
+epochs: 10
+
+data:
+  batch_size: 4
+
+optim:
+  base_lr: 5.e-6
+
+model:
+  backbone: 'CLIP-ViT-B'
+  patch_size: 16
+  classifier_fp: 'classifier_weights_p16'
+
+wandb: True
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}

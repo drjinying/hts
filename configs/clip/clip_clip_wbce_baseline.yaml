@@ -1,0 +1,21 @@
+# @package _global_
+
+exp_group: clip
+exp_name: clip-wbce-baseline
+
+optim:
+  base_lr: 1.5e-5
+
+model:
+  classifier: clip
+
+loss:
+  name: WBCE
+
+data:
+  min_samples: 1
+  
+wandb: True
+epochs: 40
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}

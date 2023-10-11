@@ -1,0 +1,55 @@
+exp_group: 'experiment'
+exp_name: 'dryrun'
+exp_desc: ''
+
+epochs: 5
+save_freq: 5
+val_freq: 5
+print_freq: 20
+wandb: False
+debug: False
+local_rank: null
+
+data:
+  dataset: hico
+  batch_size: 16
+  min_samples: 40
+  num_workers: 16
+  prefetch: 8
+  validation: False
+  aug_bright: 0.4
+  aug_contra: 0.4
+  aug_crop_scale: [0.7, 1.0]
+  aug_crop_ratio: [0.7, 1.3]
+  n_iters: -1
+
+optim:
+  base_lr: 1.e-4
+  slow_lr_backbone: False
+  weight_decay: 0.0
+
+loss:
+  name: 'Sign'
+
+model:
+  backbone: 'CLIP-ViT-B' # ImageNet1k-ViT-B, ImageNet21k-ViT-B, MLM-ViT-B, 'RN50x4', 'RN50'
+  patch_size: 32
+  classifier: 'clip'
+  classifier_fp: 'classifier_weights_p32'
+  image_size: 672
+  log_scale: 4.61
+  log_scale_max: 4.61
+  log_scale_trainable: False
+
+eval:
+  save_result: True
+  eval_known_obj: True
+
+hydra:
+  run:
+    dir: ${paths.ckpt_out_dir}
+
+defaults:
+  - paths: local
+  - scheduler: CosineAnnealingWarmRestarts
+  - _self_

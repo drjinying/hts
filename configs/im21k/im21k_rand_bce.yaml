@@ -1,0 +1,16 @@
+# @package _global_
+
+exp_group: im21k
+exp_name: rand-bce
+
+model:
+  backbone: ImageNet21k-ViT-B
+  classifier: rand
+
+loss:
+  name: BCE
+
+wandb: True
+epochs: 20
+save_freq: ${scheduler.T_0}
+val_freq: ${scheduler.T_0}
