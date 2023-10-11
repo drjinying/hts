@@ -120,3 +120,6 @@ Language Embedding Initialization provides considerable performance gain regardl
 
 Use ```scripts/tsne.py``` to inspect the embeddings like the following t-SNE image:
 ![tsne](figures/fig4_bert_tsne.png)
+
+# From DEFR to HTS (Zero-shot)
+We generate pseudo-labels with a generative model as the teacher. Code and pseudo-label will be uploaded shortly.
